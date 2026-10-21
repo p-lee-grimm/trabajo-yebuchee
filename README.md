@@ -83,3 +83,7 @@ venv/bin/python tools/gen-vapid-keys >> config.yaml   # ключи для push, 
 Навыки и команды в `puto_trabajo_template/.claude/` основаны на
 [ai-job-search](https://github.com/ai-job-search-dev/ai-job-search) Мадса Лоренцена
 (MIT, см. `puto_trabajo_template/LICENSE-ai-job-search`). Шрифты Lato и Raleway — SIL OFL.
+
+## Лицензия
+
+MIT — см. `LICENSE`. Навыки из ai-job-search и шрифты остаются под своими лицензиями.
