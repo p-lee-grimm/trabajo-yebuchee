@@ -1,0 +1,71 @@
+# Copy to config.yaml and fill in. config.yaml is gitignored — it holds secrets.
+
+# Telegram login. Create a bot with @BotFather, then /setdomain → the domain this app is
+# served on (the login widget only works there). Your numeric Telegram id: ask @userinfobot.
+bot_token: "123456:YOUR_BOT_TOKEN"
+bot_username: your_bot          # without @
+allowed_user_ids:
+  - 123456789
+# Signs the session cookie. Generate:  python3 -c "import secrets; print(secrets.token_hex(32))"
+secret_key: CHANGE_ME
+# false only to test over plain http (http://127.0.0.1); browsers drop Secure cookies there.
+cookie_secure: true
+
+# Web Push; without these the notification button is hidden.
+# Generate:  venv/bin/python tools/gen-vapid-keys >> config.yaml
+vapid_public_key: ""
+vapid_private_key: ""
+vapid_subject: mailto:you@example.com
+
+# ---------------------------------------------------------------- puto-trabajo (job search)
+# One instance per job seeker: everyone in allowed_user_ids shares the workspace.
+# The workspace (data/puto_trabajo/) is seeded from puto_trabajo_template/ on first start;
+# fill it in with /setup in the app's chat, then edit ranking_rules.md and sources.json.
+
+# freehire.me search key (optional: search is public; a wrong key is a loud 400).
+freehire_api_key: ""
+# Mailbox the "📬 Проверить почту" button and the hourly sync read (IMAP over SSL, port 993).
+# Without the password mail sync is switched off.
+zoho_imap_host: imap.zoho.eu
+zoho_imap_user: you@example.com
+zoho_imap_password: ""
+
+puto_trabajo:
+  # Public URL of this deployment, sent in the freehire User-Agent. Optional.
+  public_url: https://jobs.example.com/
+  # Base of copyable share links. Set it only if nginx maps <base>/<token> onto
+  # /api/puto-trabajo/artifact/<token>; empty builds links onto that route.
+  share_base_url: ""
+  # The 06:00 dead-link recheck runs in this zone.
+  timezone: Europe/Berlin
+  # Where the candidate lives (ISO-2). Postings confined to one other country are dropped
+  # before ranking; without home_country no posting is dropped on location.
+  home_country: DE
+  # Regex of region words that include home ("Remote — Europe" stays in).
+  home_regions: 'europe|\beu\b|emea|\bcet\b|\bdach\b'
+  # Countries the candidate can't work from however the posting words it. US and IN also
+  # switch on text tells (401(k), W-2, rupee pay).
+  unreachable_countries: [US, CA, IN]
+  # Countries the candidate would move to: their single-country postings are kept and
+  # ranked. Quote "NO" (Norway) — bare NO is a YAML false.
+  relocation_countries: [NL, AT, CH]
+  # getmatch.ru region slugs that include home.
+  getmatch_regions: [_cu-world, _cu-europe, _cu-european-union, _cu-emea]
+  salary:
+    currency: EUR
+    monthly_floor: 4000          # gross per month; the ranker never asks below it
+    contractor_uplift: 20-30%    # extra asked on freelance / B2B contracts
+  # Search directions: the switch over the tracker, the job list and the documents. A
+  # title is in a track when any rule's `match` hits and its `unless` does not (regex,
+  # case-insensitive, JavaScript syntax). No tracks — no switch.
+  tracks:
+    - id: analyst
+      label: Analyst
+      hint: Data and product analysts
+      rules:
+        - match: 'analyst|data\s+scien'
+    - id: engineer
+      label: Engineer
+      hint: Data and analytics engineers
+      rules:
+        - match: '\b(data|analytics)\s+engineer'

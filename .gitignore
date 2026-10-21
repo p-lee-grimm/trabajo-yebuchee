@@ -1,0 +1,10 @@
+# Secrets
+config.yaml
+
+# Your data: the database and the job-search workspace (CVs, letters, profile)
+data/
+
+__pycache__/
+*.py[cod]
+venv/
+.venv/

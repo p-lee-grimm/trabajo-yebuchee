@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Generate a VAPID keypair for Web Push and print it as config.yaml lines.
+
+Web Push identifies the sending server by a P-256 keypair: the browser is handed the
+public key at subscribe time and the push service (FCM, Mozilla, WNS) then only accepts
+notifications signed by the matching private key. Rotating the pair invalidates every
+existing subscription, so generate once and keep it.
+
+Run from the repo root with the venv python — the `cryptography` wheel is only there:
+
+    venv/bin/python tools/gen-vapid-keys >> config.yaml
+"""
+
+import base64
+
+from cryptography.hazmat.primitives import serialization
+from py_vapid import Vapid01
+
+
+def b64(raw: bytes) -> str:
+    """base64url without padding — the encoding both the VAPID spec and the browser's
+    applicationServerKey expect."""
+    return base64.urlsafe_b64encode(raw).decode().rstrip("=")
+
+
+def main() -> None:
+    vapid = Vapid01()
+    vapid.generate_keys()
+    private = b64(vapid.private_key.private_bytes(
+        serialization.Encoding.DER, serialization.PrivateFormat.PKCS8,
+        serialization.NoEncryption()))
+    # Uncompressed point (0x04 || X || Y), 65 bytes: the one form browsers accept.
+    public = b64(vapid.public_key.public_bytes(
+        serialization.Encoding.X962, serialization.PublicFormat.UncompressedPoint))
+    print("\n# Web Push (VAPID). Public key is handed to the browser; private key signs.")
+    print(f"vapid_public_key: {public}")
+    print(f"vapid_private_key: {private}")
+    print("vapid_subject: mailto:you@example.com")
+
+
+if __name__ == "__main__":
+    main()

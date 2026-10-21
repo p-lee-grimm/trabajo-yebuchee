@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabajo Yebuchee</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+<meta property="og:title" content="Trabajo Yebuchee">
+<meta property="og:description" content="Трекер откликов, скрэпинг вакансий и ранжирование под профиль">
+<!-- Installable web app. Not `manifest.json` — that name is taken by the marketplace's
+     own catalog entry (routes/apps.py), which is a completely different schema.
+     On iOS this is what makes push possible at all: Safari delivers web push only to a
+     web app added to the Home Screen, never to a tab. -->
+<link rel="manifest" href="app.webmanifest">
+<meta name="theme-color" content="#0f0f0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Trabajo">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css?v=28">
+</head>
+<body>
+
+<header>
+    <h1>Trabajo Yebuchee</h1>
+    <p class="subtitle">Отклики, поиск вакансий и ранжирование под профиль</p>
+</header>
+
+<div class="tabs">
+    <button class="tab active" data-tab="tracker">Трекер</button>
+    <button class="tab" data-tab="search">Поиск</button>
+    <button class="tab" data-tab="docs">Документы</button>
+</div>
+
+<!-- ================= ТРЕКЕР ================= -->
+<section id="tab-tracker">
+    <div class="stats" id="stats"></div>
+
+    <!-- Воронка: во что превратились отправленные отклики. Рисуется из того же массива,
+         что и таблица ниже, поэтому цифры и строки всегда сходятся. -->
+    <div class="funnel hidden" id="funnel"></div>
+
+    <div class="toolbar">
+        <input type="search" id="tracker-search" placeholder="Поиск по компании, роли, заметкам…" style="min-width:240px;flex:1">
+        <div class="seg hidden" id="tracker-track" data-tracks role="group"
+             aria-label="Тип откликов — фильтрует и таблицу, и воронку, и цифры сверху"></div>
+        <!-- Мультивыбор статусов: details вместо select multiple — тот на телефоне
+             открывается неудобным системным списком, а здесь обычные галочки. -->
+        <details class="multi" id="tracker-status">
+            <summary>Все статусы</summary>
+            <div class="multi-menu">
+                <label><input type="checkbox" value="draft"> Черновик</label>
+                <label><input type="checkbox" value="applied"> Отклик отправлен</label>
+                <label><input type="checkbox" value="test_task"> Тестовое</label>
+                <label><input type="checkbox" value="interview"> Интервью</label>
+                <label><input type="checkbox" value="offer"> Оффер</label>
+                <label><input type="checkbox" value="rejected"> Отказ</label>
+                <label><input type="checkbox" value="no_response"> Нет ответа</label>
+                <label><input type="checkbox" value="withdrawn"> Снят</label>
+                <label><input type="checkbox" value="on_hold"> На паузе</label>
+                <div class="multi-actions">
+                    <button type="button" class="btn ghost sm" data-multi="open">В процессе</button>
+                    <button type="button" class="btn ghost sm" data-multi="clear">Сбросить</button>
+                </div>
+            </div>
+        </details>
+        <button class="btn" id="btn-add-app">+ Отклик</button>
+        <button class="btn ghost" id="btn-mail">📬 Проверить почту</button>
+        <button class="btn ghost" id="btn-contacts">🤝 Контакты</button>
+        <button class="btn ghost" id="btn-import">Импорт CSV</button>
+        <a class="btn ghost" id="btn-export" href="/api/puto-trabajo/export.csv" style="text-decoration:none">Экспорт CSV</a>
+    </div>
+
+    <div id="mail-panel" class="hidden"></div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nowrap" data-sort="date">Дата</th>
+                    <th data-sort="company">Компания</th>
+                    <th data-sort="role">Роль</th>
+                    <th class="nowrap" data-sort="source_label" title="Откуда пришла вакансия">Источник</th>
+                    <th class="nowrap" data-sort="status">Статус</th>
+                    <th class="nowrap" data-sort="updated_at">Обновлён</th>
+                    <th class="nowrap" data-sort="fit_rating">Fit</th>
+                    <th>Заметки</th>
+                    <th class="nowrap"></th>
+                </tr>
+            </thead>
+            <tbody id="tracker-body"></tbody>
+        </table>
+    </div>
+    <div id="tracker-empty" class="empty hidden">
+        <div class="icon">📋</div>
+        <div>Ничего не найдено</div>
+    </div>
+</section>
+
+<!-- ================= ПОИСК ================= -->
+<section id="tab-search" class="hidden">
+    <div class="toolbar">
+        <input type="url" id="link-url" placeholder="Вставь ссылку на вакансию…" style="min-width:260px;flex:1">
+        <button class="btn" id="btn-add-link">Добавить по ссылке</button>
+        <button class="btn ghost" id="btn-add-text"
+                title="Если страница не открывается (LinkedIn за логином, Workday, письмо от рекрутера) — вставь текст вакансии руками">📋 Вставить текст</button>
+    </div>
+    <div class="toolbar">
+        <button class="btn ghost" id="btn-scrape">🔍 Скрэпить источники</button>
+        <button class="btn ghost" id="btn-rank">⚖️ Ранжировать новые</button>
+        <button class="btn ghost" id="btn-salary"
+                title="Досчитать зарплатную рекомендацию у показанных вакансий, где её ещё нет. Идёт тем же прогоном, что и ранжирование, и так же стоит денег.">💶 Оценить зарплату</button>
+        <button class="btn ghost" id="btn-recheck"
+                title="Перепроверить ссылки всех активных вакансий. Запускается и сам, каждый день в 6 утра.">🩺 Перепроверить вакансии</button>
+        <button class="btn ghost hidden" id="btn-push"
+                title="Уведомления в браузере: вакансии с высокой оценкой, ответы и запросы доступа в чатах">🔔 Уведомления</button>
+        <div class="spacer"></div>
+        <input type="search" id="jobs-search" placeholder="Поиск по вакансиям…"
+               title="Ищет по названию, компании, локации, описанию и вердикту оценки. Несколько слов — все должны найтись."
+               style="min-width:200px;flex:1">
+        <div class="seg hidden" id="jobs-track" data-tracks role="group" aria-label="Тип вакансий"></div>
+        <select id="jobs-filter">
+            <option value="">Все, кроме отклонённых</option>
+            <option value="not_applied">Все без отклика</option>
+            <option value="ranked">Оценённые</option>
+            <option value="new">Новые (без оценки)</option>
+            <option value="dismissed">Отклонённые</option>
+            <option value="dead">Протухшие</option>
+        </select>
+        <label class="score-filter" title="Показывать вакансии с оценкой не ниже">
+            от <output id="min-score-out">0</output>
+            <input type="range" id="jobs-min-score" min="0" max="100" step="5" value="0">
+        </label>
+        <label class="check-filter" title="Только компании, где у тебя есть контакт в LinkedIn">
+            <input type="checkbox" id="jobs-contacts"> 🤝 с контактом
+        </label>
+        <select id="jobs-period" title="По дате публикации, а если её нет — по дате добавления">
+            <option value="">за всё время</option>
+            <option value="3">за 3 дня</option>
+            <option value="7">за неделю</option>
+            <option value="14">за 2 недели</option>
+            <option value="30">за месяц</option>
+        </select>
+        <button class="btn ghost" id="btn-sources">Источники</button>
+    </div>
+
+    <div id="runs"></div>
+    <div class="jobs" id="jobs"></div>
+    <div id="jobs-empty" class="empty hidden">
+        <div class="icon">🔍</div>
+        <div id="jobs-empty-text">Пока пусто. Запусти скрэпинг или добавь вакансию по ссылке.</div>
+    </div>
+</section>
+
+<!-- ================= ДОКУМЕНТЫ ================= -->
+<section id="tab-docs" class="hidden">
+    <p class="hint">
+        CV и cover letters генерирует <code>/apply</code> — кнопкой «✍️ Резюме» в карточке вакансии
+        или той же командой в терминале. Здесь — просмотр готового.
+        Рабочая папка: <code>data/puto_trabajo/</code>.
+    </p>
+    <div class="toolbar" style="margin-top:16px">
+        <button class="btn ghost" id="btn-setup"
+                title="Заполнить профиль кандидата (CLAUDE.md, documents/, мастер-CV) по шагам в чате">🧭 Профиль</button>
+        <input type="search" id="docs-search" placeholder="Компания или должность…" style="min-width:220px;flex:1">
+        <div class="seg hidden" id="docs-track" data-tracks role="group" aria-label="Тип заявок"></div>
+        <select id="docs-status" title="Статус отклика в трекере">
+            <option value="">Любой статус</option>
+            <option value="active" title="Отклик, тестовое, интервью или оффер">В процессе</option>
+            <option value="interview">Интервью / оффер</option>
+            <option value="rejected">Отказ</option>
+            <option value="closed" title="Отказ, нет ответа или снят">Закрытые</option>
+            <option value="none">Нет в трекере</option>
+        </select>
+        <select id="docs-kit" title="Что есть в комплекте">
+            <option value="">Любой комплект</option>
+            <option value="full">CV + письмо</option>
+            <option value="no_cover">Без письма</option>
+            <option value="no_pdf" title="Есть .tex, но PDF из него не собран">PDF не собран</option>
+            <option value="archive">С архивом заявки</option>
+        </select>
+        <select id="docs-sort">
+            <option value="new">Сначала новые</option>
+            <option value="old">Сначала старые</option>
+            <option value="company">Компания А–Я</option>
+            <option value="role">Должность А–Я</option>
+        </select>
+    </div>
+    <div id="docs-content"></div>
+</section>
+
+<!-- Док чатов: висит поверх любой вкладки, потому что /apply идёт параллельно работе в трекере -->
+<aside id="chat-dock" class="hidden">
+    <div class="dock-head" id="dock-head">
+        <span class="dock-title">💬 Чаты <span class="dock-count" id="dock-count"></span></span>
+        <button class="dock-collapse" id="dock-collapse" title="Свернуть">▾</button>
+    </div>
+    <div class="dock-body" id="dock-body">
+        <div id="dock-list"></div>
+        <label class="dock-filter">
+            <input type="checkbox" id="dock-applied"> показать с откликом (<span id="dock-applied-n">0</span>)
+        </label>
+    </div>
+</aside>
+
+<!-- Кука сессии живёт 30 дней. Когда она протухала, каждый запрос отвечал 403 и приложение
+     выглядело сломанным: приходилось перезагружать страницу руками. -->
+<div id="auth-gate" class="auth-gate hidden">
+    <div class="auth-card">
+        <div class="auth-icon">💼</div>
+        <h2>Нужен вход</h2>
+        <p id="auth-msg" class="auth-msg">Сессия Telegram истекла. Войди — и останешься на этой же странице.</p>
+        <div id="telegram-login"></div>
+    </div>
+</div>
+
+<div id="modal-root"></div>
+<script src="app.js?v=35"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(job-application-assistant)",
+      "Task",
+      "Agent",
+      "ToolSearch",
+      "Bash(bun run:*)",
+      "Bash({{PT_ROOT}}/tools/pt-salary:*)",
+      "Bash(pdftotext:*)"
+    ]
+  }
+}

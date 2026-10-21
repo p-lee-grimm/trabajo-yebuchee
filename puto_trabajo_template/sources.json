@@ -1,0 +1,2330 @@
+{
+  "keywords": [],
+  "location_terms": [
+    "remote",
+    "worldwide",
+    "anywhere"
+  ],
+  "telegram_keywords": [],
+  "title_exclude": [],
+  "title_also_match": [],
+  "feeds": [
+    {
+      "id": "remotive",
+      "type": "remotive",
+      "enabled": false,
+      "url": "https://remotive.com/api/remote-jobs?category=data&limit=100"
+    },
+    {
+      "id": "arbeitnow",
+      "type": "arbeitnow",
+      "enabled": false,
+      "url": "https://www.arbeitnow.com/api/job-board-api"
+    },
+    {
+      "id": "jobicy",
+      "type": "jobicy",
+      "enabled": false,
+      "url": "https://jobicy.com/api/v2/remote-jobs?count=50&geo=europe&industry=data-science"
+    },
+    {
+      "id": "himalayas",
+      "type": "himalayas",
+      "enabled": false,
+      "url": "https://himalayas.app/jobs/api?limit=100"
+    },
+    {
+      "id": "wwr",
+      "type": "rss",
+      "enabled": false,
+      "url": "https://weworkremotely.com/remote-jobs.rss"
+    },
+    {
+      "id": "remoteok",
+      "type": "remoteok",
+      "enabled": false,
+      "url": "https://remoteok.com/api"
+    },
+    {
+      "id": "freehire-home",
+      "type": "freehire",
+      "enabled": false,
+      "url": "https://freehire.me/api/v1/agent/jobs/search?q=%22data%20analyst%22&q_fields=title&countries=xx&open_within_days=30"
+    },
+    {
+      "id": "freehire-remote",
+      "type": "freehire",
+      "enabled": false,
+      "url": "https://freehire.me/api/v1/agent/jobs/search?q=%22data%20analyst%22&q_fields=title&regions=global&work_mode=remote&open_within_days=30"
+    },
+    {
+      "id": "getmatch",
+      "type": "getmatch",
+      "enabled": false,
+      "url": "https://getmatch.ru/api/offers?pa=all"
+    }
+  ],
+  "boards": [
+    {
+      "ats": "ashby",
+      "token": "smallpdf",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "n8n",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "pennylane",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "Docplanner",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "creativefabrica",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "dwelly",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "moniepoint",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "pnlfin",
+      "region": "eu",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "booksy-1",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "feeldco",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "on-the-go-systems",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "amenitiz",
+      "enabled": true
+    },
+    {
+      "ats": "recruitee",
+      "token": "bunq",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "cabify",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "clarityai",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "contentful",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "contentsquare",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "datadog",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "elastic",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "exoticca",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "feverup",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "getyourguide",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "gitlab",
+      "enabled": true
+    },
+    {
+      "ats": "recruitee",
+      "token": "holded",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "hostinger",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "jobandtalent",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "manychat",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "mongodb",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "n26",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "preply",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "remote",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "stripe",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "tinybird",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "typeform",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "wallapop",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "zapier",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "satispay",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "voodoo",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "ebury",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "zyngacareers",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "airapps",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "grafanalabs",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "spcareers",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "joko",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "scopely",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "backmarket",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "payoneer",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "appodeal",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "lodgify",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "veeva",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "freenow",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "vonage",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "mewssystems",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "currenciesdirect",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "bigblue",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "ogury",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "rover",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "lokalise",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "blip-global",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "jobgether",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "agoda",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "capco",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "addepar1",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "abinbev",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "platacard",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "launch2",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "kaizengaming",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "yipitdata",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "aylo",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "relay",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "veeamsoftware",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "sezzle",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "skelar",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "upstart",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "benchling",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "brigit",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "tsmg",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "snowflake",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "harvey",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "flyzipline",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "lightspeedhq",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "dnb",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "similarweb",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "springhealth66",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "appdirect",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "yipitdatajobs",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "machinifyinc",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "vacancies",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "ensco",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "9fin",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "ruby-labs",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "accuweather",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "patrianna",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "nmi",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "epidemic-sound",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "neon",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "rackner",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "bluelightconsulting",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "nebius",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "okta",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "binance",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "pinterest",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "precisionmedicinegroup",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "thetradedesk",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "xsolla",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "ciandt",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "spektrum",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "cookunity",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "teya",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "cloudbedsthirdpartyboard",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "kyivstar",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "instacart",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "smxtech",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "hirehangar",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "stackadapt",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "pointclickcare",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "the-global-talent-co",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "ion",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "analyticservicesinc",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "cloverhealth",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "engine",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "1password",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "lendable",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "torcrobotics",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "billcom",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "cloudbeds",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "growetalents",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "precisionaq",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "bees",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "lucidsoftware",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "assured",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "skydropx",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "rushstreetinteractive",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "kissmyapps",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "tremendous",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "aftership",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "economicmodeling",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "vulncheck",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "numeral",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "easygenerator",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "endpointclinical",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "accurx",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "persona",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "metergysolutions",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "kayzen",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "thebrattlegroup",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "pointdigitalfinance",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "csciconsulting",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "nationalpublicradioinc",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "obrio",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "ccahremote",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "find",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "spacex",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "anthropic",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "sumup",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "avepoint",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "toast",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "roblox",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "formlabs",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "sonyinteractiveentertainmentglobal",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "affirm",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "truelogic",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "drweng",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "gotion",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "quince",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "welbehealth",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "includedhealth",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "handshake",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "thequalitygroupgmbh1",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "industrialelectricmanufacturing",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "42dot",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "cursor",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "zoominfo",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "xero",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "hims-and-hers",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "worldquant",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "freedomcare",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "penumbrainc",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "deepgram",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "rehire",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "knowbe4",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "garnerhealth",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "claylabs",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "coherehealth",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "ttecdigital",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "lendbuzz",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "rtbhouse",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "dunnhumby",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "lambda",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "redventures",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "keepersecurity",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "heartflowinc",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "kaseya",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "supabase",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "docebo",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "serverobotics",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "solidgate",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "dragos",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "caseware",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "shipmonk",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "thunes",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "idme",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "toogeza",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "m9solutions",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "meter",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "rain",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "smithrx",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "belong",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "protective",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "speak",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "allica-bank",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "gigs",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "sardine",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "buyersedgeplatformrecruiting",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "relayfi",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "raisin",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "thatgamecompany",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "fender",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "netbrain",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "scribe",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "preciselyinternationaljobs",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "certik",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "holywater",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "prompt",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "finn",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "weave",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "edgeconnex",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "qed-ai",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "twinhealth",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "fundingcircle",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "autotradercanada",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "netomi",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "claritypay",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "momsmeals",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "itd",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "zeely",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "addi",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "h1",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "khanacademy",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "arcanaanalytics",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "atek",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "nightfall-ai",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "paretocaptiveservicesllc",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "hackerone",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "poshmark",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "rwazi",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "d2l",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "drivewealth",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "fidelityguarantylife",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "scorpionenterprisesllc",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "extrahopnetworks",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "revenuecat",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "godaddy",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "horizonindustrieslimited",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "tebra",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "strava",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "monzoreferrals",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "float",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "collective",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "join9am",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "jumpcloud",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "muttdata",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "andela",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "oowlish",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "counsel",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "motorway",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "safelease",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "greenlight",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "growe",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "srsacquiom",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "brightwheel",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "blablacar",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "array",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "coalfire",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "boulevard",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "modernhealth",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "leadbank",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "hs",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "impiricus",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "kellerpostman",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "arcadiacareers",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "hoxhunt",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "omniscient",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "quarks-tech",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "tala",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "nymbusinc",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "smartcatplatforminc",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "arcadia",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "centivo",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "evergreennephrology",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "helloheart",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "readdle70",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "acorns",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "banyancanopygroup",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "berlinbrands",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "koho",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "hopskipdrive",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "tuesdayhealth",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "agero",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "devsavant",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "clearcapital",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "photoroom",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "grover",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "launchpotato",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "renaissancelearning-nam",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "rhombuspower",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "skillzinc",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "infinitus",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "paireyewear",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "zello",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "ccah",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "charterup",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "gmo",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "earnest",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "nibiru",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "openx",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "pioneer-services",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "rovio-2",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "recidiviz",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "beamery",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "kraftonamericas",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "praxent",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "ag1",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "gt-hq",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "doximity",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "sagent",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "august-health",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "gratia",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "joyteractive",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "vio",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "evio",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "spins",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "gotphoto",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "questbridge",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "updater",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "gohenry",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "radformation",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "peoplefinders",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "goody",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "grvt",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "overmind",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "lively43",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "underscoremarketing",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "kano",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "oodlefinance",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "prezzee",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "enscohotjobs",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "olx",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "jetbrains",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "bumbleinc",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "admirals",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "salmon-group",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "abbyy",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "airslate",
+      "enabled": true
+    },
+    {
+      "ats": "recruitee",
+      "token": "careers-analytics",
+      "enabled": true
+    },
+    {
+      "ats": "recruitee",
+      "token": "novakidteachers",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "quadcode",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "unlimit",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "codesignal",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "legion-farm",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "outschool",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "volka",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "3commas",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "compasspathways",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "humansignal",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "ahrefsjobs",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "silananotechnologies",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "coinspaid",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "prodlyjobs",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "lyka",
+      "enabled": true
+    },
+    {
+      "ats": "recruitee",
+      "token": "intento",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "truv",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "zeptolab",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "appfollow",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "apron",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "centml",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "chattermill",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "cloudlinux-1",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "CollectlyInc",
+      "enabled": true
+    },
+    {
+      "ats": "recruitee",
+      "token": "justrussel",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "datafold",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "eqvilentjobs",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "hypemasters",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "inworld-ai",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "kadmos2",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "kadmos3",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "lightspeedhq",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "bratte",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "luminai",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "Mapbox",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "miteksystems-2",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "perplexityai",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "profi",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "pure-app",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "quicknode",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "Rarible",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "sanas.ai",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "simple",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "spines",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "goteleport",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "tempo-io",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "Termius",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "virtuozzo",
+      "enabled": true
+    },
+    {
+      "ats": "recruitee",
+      "token": "wallarm",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "zerion",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "zeroavia",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "moonpay",
+      "enabled": true
+    },
+    {
+      "ats": "recruitee",
+      "token": "aidigital",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "humanoid",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "clayglobal",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "avride",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "p2p.org",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "xometryeurope",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "viva",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "flohealth",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "dbeaver",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "easybrain",
+      "enabled": true
+    },
+    {
+      "ats": "workable",
+      "token": "joom",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "lightspeed",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "toloka",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "planner5d",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "flipper",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "wrike",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "picsart",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "gopuff",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "pandadoc",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "webflow",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "webflow",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "spryker",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "people-ai",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "soft2bet",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "bigid",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "clickhouse",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "fieldmaterials",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "fundraiseup",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "fxpro",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "gradient",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "haut-ai",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "manychat",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "orioninnovation",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "recraft",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "sleepdoctor",
+      "enabled": true
+    },
+    {
+      "ats": "lever",
+      "token": "superannotate",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "temporal",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "wheely",
+      "enabled": true
+    },
+    {
+      "ats": "greenhouse",
+      "token": "behavox",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "splitmetrics",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "scorewarrior",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "higgsfieldai",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "endgame",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "whitecircle",
+      "enabled": true
+    },
+    {
+      "ats": "ashby",
+      "token": "constructor",
+      "enabled": true
+    }
+  ]
+}

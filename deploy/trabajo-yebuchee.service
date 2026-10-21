@@ -1,0 +1,18 @@
+# systemd unit. Adjust User and the paths, then:
+#   sudo cp deploy/trabajo-yebuchee.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now trabajo-yebuchee
+[Unit]
+Description=Trabajo Yebuchee job search
+After=network.target
+
+[Service]
+User=jobsearch
+WorkingDirectory=/home/jobsearch/trabajo-yebuchee
+# claude (Claude Code CLI) is looked up at ~/.local/bin/claude; override with PT_CLAUDE_BIN.
+Environment=PATH=/home/jobsearch/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/jobsearch/trabajo-yebuchee/venv/bin/uvicorn server:app --host 127.0.0.1 --port 8600
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
