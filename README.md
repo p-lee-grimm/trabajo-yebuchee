@@ -18,8 +18,8 @@ specific posting. The web interface is in Russian.
 - **Documents.** Every generated PDF, with per-file share links.
 
 One instance per job seeker. Runs on a small Linux server; needs Python 3.12, the Claude
-Code CLI (Claude subscription or API key), TeX, a domain with HTTPS and a Telegram bot for
-login.
+Code CLI (Claude subscription or API key), TeX and a domain with HTTPS. Login is a password
+or a Telegram account.
 
 **→ [Setup guide](docs/SETUP.md)**: install, keys and secrets, configuring which job titles
 are searched and how postings are scored.
@@ -29,7 +29,8 @@ are searched and how postings are scored.
 ```bash
 git clone https://github.com/p-lee-grimm/trabajo-yebuchee.git && cd trabajo-yebuchee
 python3.12 -m venv venv && venv/bin/pip install -r requirements.txt
-cp config.example.yaml config.yaml        # Telegram bot, your id, secret_key, puto_trabajo:
+cp config.example.yaml config.yaml        # auth (password or Telegram), secret_key, puto_trabajo:
+venv/bin/python tools/hash-password >> config.yaml   # for auth: password
 venv/bin/uvicorn server:app --port 8600
 ```
 

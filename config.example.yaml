@@ -1,11 +1,19 @@
 # Copy to config.yaml and fill in. config.yaml is gitignored — it holds secrets.
 
-# Telegram login. Create a bot with @BotFather, then /setdomain → the domain this app is
+# How you log in: telegram (a Telegram account per person) or password (one password).
+auth: telegram
+
+# auth: telegram — create a bot with @BotFather, then /setdomain → the domain this app is
 # served on (the login widget only works there). Your numeric Telegram id: ask @userinfobot.
 bot_token: "123456:YOUR_BOT_TOKEN"
 bot_username: your_bot          # without @
 allowed_user_ids:
   - 123456789
+
+# auth: password — generate the hash (the password itself is never stored):
+#   venv/bin/python tools/hash-password >> config.yaml
+# password_hash: scrypt$...
+
 # Signs the session cookie. Generate:  python3 -c "import secrets; print(secrets.token_hex(32))"
 secret_key: CHANGE_ME
 # false only to test over plain http (http://127.0.0.1); browsers drop Secure cookies there.

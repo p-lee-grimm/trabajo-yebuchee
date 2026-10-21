@@ -98,10 +98,11 @@ async function api(path, options = {}) {
     return data;
 }
 
-// ------------------------------------------------------------------ вход через Telegram
+// ------------------------------------------------------------------ вход
 
-// The login widget needs the bot's username. /api/auth/check names it when the deployment
-// configures one (bot_username in config.yaml); there is no default.
+// Two ways in, chosen by the server: the Telegram widget (default) or a password form —
+// /api/auth/check says which ("method"). The widget needs the bot's username, which the
+// same answer names when the deployment configures one; there is no default.
 let TG_BOT = '';
 let authGateShown = false;
 
@@ -115,7 +116,11 @@ async function checkAuth() {
         return true;  // сеть лежит — пусть обычные запросы сами расскажут, что не так
     }
     if (data && data.bot) TG_BOT = data.bot;
-    if (!data || !data.authenticated) { showAuthGate(); return false; }
+    if (!data || !data.authenticated) {
+        if (data && data.method === 'password') showPasswordGate();
+        else showAuthGate();
+        return false;
+    }
     // Кнопка логина тут не поможет: аккаунт есть, доступа нет.
     if (!data.whitelisted) { showAuthGate('Этот аккаунт Telegram не в списке доступа.', false); return false; }
     return true;
@@ -137,6 +142,38 @@ function showAuthGate(message, withWidget = true) {
         script.setAttribute('data-request-access', 'write');
         box.appendChild(script);
     }
+    document.getElementById('auth-gate').classList.remove('hidden');
+}
+
+function showPasswordGate() {
+    if (authGateShown) return;
+    authGateShown = true;
+    stopPolling();
+    document.getElementById('auth-msg').textContent = 'Введи пароль — и останешься на этой же странице.';
+    const box = document.getElementById('telegram-login');
+    box.innerHTML = `<form class="auth-form">
+        <input type="password" name="password" placeholder="Пароль" autocomplete="current-password" required autofocus>
+        <button class="btn" type="submit">Войти</button>
+    </form>`;
+    box.querySelector('form').addEventListener('submit', async event => {
+        event.preventDefault();
+        const button = event.target.querySelector('button');
+        button.disabled = true;
+        try {
+            const res = await fetch('/api/auth/password', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password: event.target.password.value }),
+            });
+            if (res.ok) { location.reload(); return; }
+            const data = await res.json().catch(() => ({}));
+            toast(data.error || 'Не удалось войти', true);
+            event.target.password.select();
+        } catch (e) {
+            toast('Не удалось войти: ' + e.message, true);
+        }
+        button.disabled = false;
+    });
     document.getElementById('auth-gate').classList.remove('hidden');
 }
 

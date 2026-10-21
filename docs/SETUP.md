@@ -26,10 +26,10 @@ scored. The web interface itself is in Russian.
 | | |
 |---|---|
 | Server | Linux (Debian/Ubuntu assumed below), 2–3 GB RAM, ~3 GB disk with full TeX |
-| Domain | A domain or subdomain pointing at the server, with HTTPS. The Telegram login widget and the session cookie only work over https. |
+| Domain | A domain or subdomain pointing at the server, with HTTPS. The session cookie (and the Telegram login widget) only work over https. |
 | Python | 3.12 **with the `sqlite3` module** (`python3.12 -c "import sqlite3"` must not fail) |
 | Claude | A Claude subscription or an Anthropic API key, used through the Claude Code CLI |
-| Telegram | An account and a bot (free, created in two minutes) — this is how you log in |
+| Login | Either a Telegram bot (free, two minutes) or just a password |
 
 One instance serves one job seeker. Everyone listed in `allowed_user_ids` sees the same
 profile, sources and documents.
@@ -86,13 +86,32 @@ chmod 600 config.yaml
 
 All of these go into `config.yaml` (gitignored, never commit it).
 
-### Telegram login — required
+### Login — pick one
+
+```yaml
+auth: telegram      # or: password
+```
+
+**Password** — the simplest: one password for the whole instance.
+
+```bash
+venv/bin/python tools/hash-password >> config.yaml   # asks twice, appends password_hash
+```
+
+Then set `auth: password`; `bot_token`, `bot_username` and `allowed_user_ids` can be deleted.
+Only a salted scrypt hash is stored. Five wrong attempts in a row from one address lock the
+form for a minute. To change the password, run the tool again, replace the old
+`password_hash` line and restart — every open session is logged out.
+
+**Telegram** — each person logs in with their own account; useful when several people
+share the instance, and there is no password to leak.
 
 1. In Telegram open **@BotFather** → `/newbot` → pick a name and a username.
    It replies with a token like `123456789:AA…`.
 2. Still in @BotFather: `/setdomain` → choose the bot → send your domain
    (e.g. `jobs.example.com`, no `https://`). The login widget only works on this domain.
 3. Find your numeric Telegram id: write to **@userinfobot**.
+4. Set `auth: telegram`.
 
 ```yaml
 bot_token: "123456789:AA..."
@@ -242,7 +261,7 @@ from `puto_trabajo_template/`. Everything personal lives in `data/`.
 
 ## 8. First login and your profile
 
-1. Open `https://jobs.example.com` and log in with Telegram.
+1. Open `https://jobs.example.com` and log in (password or Telegram).
 2. **Документы → 🧭 Профиль** starts `/setup` in a chat: Claude asks about you and fills
    in the profile every other step reads:
    - `CLAUDE.md` — identity, languages, work authorisation, skills, known gaps,
@@ -431,6 +450,8 @@ Updates never touch an existing workspace: new template files only reach fresh i
 | "Bot domain invalid" instead of the login button | `/setdomain` in @BotFather doesn't match the domain you opened |
 | Logged in, but "Этот аккаунт Telegram не в списке доступа" | your id is not in `allowed_user_ids` (restart after editing) |
 | Login loops back to the gate | `cookie_secure: true` over plain http, or `secret_key` changed |
+| "Слишком много попыток" | five wrong passwords in a row — wait a minute |
+| Service won't start: `config.yaml: auth: …` | the chosen `auth` mode lacks its keys (`password_hash`, or `bot_token` + `allowed_user_ids`) |
 | "claude CLI not found" | install Claude Code for the service user or set `PT_CLAUDE_BIN` |
 | Ranking errors / "not logged in" | log in as the service user (`sudo -iu jobsearch claude`) or set `ANTHROPIC_API_KEY` |
 | Chat refuses to start: gatekeeper | `pt_gatekeeper.py` failed its self-test; check the journal |

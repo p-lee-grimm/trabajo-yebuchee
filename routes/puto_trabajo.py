@@ -2881,7 +2881,11 @@ async def start_recheck(request: Request):
 
 def _scheduled_user_ids() -> list:
     """Whose data the background jobs act on. Re-read on every run so adding a user to
-    config.yaml doesn't need a restart."""
+    config.yaml doesn't need a restart. An auth module that knows its users itself (the
+    standalone build's password mode has exactly one) answers instead."""
+    import auth
+    if hasattr(auth, "background_user_ids"):
+        return auth.background_user_ids()
     try:
         import yaml
         with open(BASE_DIR / "config.yaml") as handle:

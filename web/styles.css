@@ -253,6 +253,8 @@ td.nowrap, th.nowrap { white-space: nowrap; }
 .auth-card h2 { font-size: 20px; margin-bottom: 8px; }
 .auth-msg { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
 .auth-card #telegram-login:not(:empty) { margin-bottom: 20px; }
+.auth-form { display: flex; gap: 8px; }
+.auth-form input { flex: 1; min-width: 0; }
 .auth-back { color: var(--muted); text-decoration: none; font-size: 13px; }
 .auth-back:hover { color: var(--text); }
 
